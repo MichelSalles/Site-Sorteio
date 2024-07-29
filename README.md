@@ -2,7 +2,7 @@ Explicação
 HTML:
 
 index.html: Página para cadastro de usuários com um formulário para inserir e-mail e telefone.
-admin.html: Página de administração que contém um formulário de login e um botão para sortear o vencedor. <H1>Porém o dados que estão sendo colhidos não estãoaprecendo para o ADMIN<H1>
+admin.html: Página de administração que contém um formulário de login e um botão para sortear o vencedor. Porém o dados que estão sendo colhidos não estãoaprecendo para o ADMIN
 
 
 CSS:
