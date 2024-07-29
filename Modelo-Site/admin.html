@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administração</title>
+  <title>Administração do Sorteio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Área do Administrador</h1>
-    <div id="login-form">
+    <h1>Área Administrativa</h1>
+    <form id="login-form">
       <input type="text" id="username" placeholder="Usuário" required><br>
       <input type="password" id="password" placeholder="Senha" required><br>
-      <button id="login-button">Entrar</button>
-    </div>
+      <button type="button" id="login-button">Entrar</button>
+    </form>
+
     <div id="admin-actions" style="display: none;">
+      <h2>Participantes Cadastrados</h2>
+      <ul id="participant-list"></ul>
       <button id="draw-winner">Sortear Vencedor</button>
       <p id="winner"></p>
     </div>
