@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle admin login
+  // Lidar com loguin de administrador
   if (loginForm) {
     document.getElementById('login-button').addEventListener('click', () => {
       const username = document.getElementById('username').value;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle drawing a winner
+  // Lidar com o sorteio de um vencedor
   if (drawWinnerButton) {
     drawWinnerButton.addEventListener('click', () => {
       if (users.length === 0) {
