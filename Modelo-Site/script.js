@@ -1,14 +1,11 @@
 // Mock database for simplicity
 const users = [];
-
-// Admin credentials
 const adminCredentials = { username: "admin", password: "password" };
 
 document.addEventListener('DOMContentLoaded', () => {
   const registrationForm = document.getElementById('registration-form');
   const loginForm = document.getElementById('login-form');
   const adminActions = document.getElementById('admin-actions');
-  const participantList = document.getElementById('participant-list');
   const drawWinnerButton = document.getElementById('draw-winner');
   const winnerDisplay = document.getElementById('winner');
 
@@ -25,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle admin login
+  // Lidar com loguin de administrador
   if (loginForm) {
     document.getElementById('login-button').addEventListener('click', () => {
       const username = document.getElementById('username').value;
@@ -33,34 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
       if (username === adminCredentials.username && password === adminCredentials.password) {
         loginForm.style.display = 'none';
         adminActions.style.display = 'block';
-        displayParticipants();
       } else {
         alert('Credenciais inválidas');
       }
     });
   }
 
-  // Display participants
-  function displayParticipants() {
-    participantList.innerHTML = ''; // Clear the list
-    if (users.length === 0) {
-      participantList.innerHTML = '<li>Nenhum participante cadastrado.</li>';
-    } else {
-      users.forEach((user, index) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${index + 1}. Email: ${user.email}, Telefone: ${user.phone}, Instagram: ${user.instagram}`;
-        participantList.appendChild(listItem);
-      });
-    }
+  // Lidar com o sorteio de um vencedor
+  if (drawWinnerButton) {
+    drawWinnerButton.addEventListener('click', () => {
+      if (users.length === 0) {
+        winnerDisplay.innerText = 'Nenhum participante cadastrado.';
+      } else {
+        const winner = users[Math.floor(Math.random() * users.length)];
+        winnerDisplay.innerText = `Vencedor: ${winner.email}, ${winner.phone}, ${winner.instagram}`;
+      }
+    });
   }
-
-  // Handle drawing a winner
-  drawWinnerButton.addEventListener('click', () => {
-    if (users.length === 0) {
-      winnerDisplay.innerText = 'Nenhum participante cadastrado.';
-    } else {
-      const winner = users[Math.floor(Math.random() * users.length)];
-      winnerDisplay.innerText = `Vencedor: ${winner.email}, ${winner.phone}, ${winner.instagram}`;
-    }
-  });
 });

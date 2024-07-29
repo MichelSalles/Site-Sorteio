@@ -1,15 +1,17 @@
-Armazenamento de Participantes:
+Explicação
+HTML
 
-A lista de participantes é armazenada no array users. Esse array deve ser compartilhado entre as diferentes páginas do site. Em um ambiente real, esses dados seriam mantidos em um banco de dados.
-Cadastro de Participantes:
+index.html: Página para cadastro de usuários com um formulário para inserir e-mail e telefone.
+admin.html: Página de administração que contém um formulário de login e um botão para sortear o vencedor. Porém o dados que estão sendo colhidos não estãoaprecendo para o ADMIN
 
-Na página inicial (index.html), os usuários podem se cadastrar fornecendo email, telefone e Instagram. Esses dados são adicionados ao array users.
-Login de Administrador:
 
-Na página de administração (admin.html), o administrador deve fazer login para acessar as funcionalidades de sorteio e visualização de participantes. O login é validado com base nas credenciais definidas em adminCredentials.
-Exibição de Participantes:
+CSS
 
-Após o login bem-sucedido, a função displayParticipants() é chamada para preencher a lista #participant-list com os dados dos participantes armazenados no array users.
-Sorteio:
+style.css: Estilos básicos para o layout, incluindo centralização, estilização de botões e campos de entrada.
 
-O botão "Sortear Vencedor" escolhe aleatoriamente um participante do array users e exibe as informações do vencedor na área #winner.
+JavaScript:
+
+script.js: Contém toda a lógica para cadastro de usuários, autenticação de administrador e sorteio de vencedor.
+Um "mock" de banco de dados é usado com um array users para armazenar os participantes.
+As credenciais do administrador são armazenadas em adminCredentials.
+Após o login, o administrador pode ver o botão de sorteio e selecionar um vencedor aleatório dos participantes cadastrados.
